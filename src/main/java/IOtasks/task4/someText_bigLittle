@@ -1,0 +1,25 @@
+ PUBLIC CLASS IOTASKS.TASK2.PUBLICTOPRIVATE {
+ 
+     PUBLIC STATIC VOID REPLACER(STRING FILENAME) THROWS FILENOTFOUNDEXCEPTION {
+         STRINGBUILDER sb = NEW STRINGBUILDER();
+ 
+         FILE FILE = NEW FILE(FILENAME);
+ 
+         TRY {
+             BUFFEREDREADER in = NEW BUFFEREDREADER(NEW FILEREADER(FILE.GETABSOLUTEFILE()));
+             TRY {
+                 STRING s;
+                 WHILE ((S = IN.READLINE()) != NULL) {
+                     SB.APPEND(S);
+                     SB.APPEND("\N");
+                 }
+                     STRING FILEINSTRING=SB.TOSTRING();
+                     FILEINSTRING.REPLACE("PUBLIC","PRIVATE");
+                     CREATEANDSORT.WRITE(FILENAME,FILEINSTRING);
+             } FINALLY {
+                 IN.CLOSE();
+             }
+         } CATCH (IOEXCEPTION e) {
+             THROW NEW RUNTIMEEXCEPTION(E);
+         }
+     }
