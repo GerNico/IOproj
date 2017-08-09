@@ -15,9 +15,7 @@ public class CreateAndSort {
 
     }
 
-    public static String readAllIntsAndSort(String fileName)  {
-        StringBuilder sb = new StringBuilder();
-
+    public static void readAllIntsAndSort(String fileName)  {
         File file = new File(fileName);
 
         ArrayList<Integer> ints = new ArrayList<>(5000);
@@ -36,6 +34,5 @@ public class CreateAndSort {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return sb.toString();
     }
 }

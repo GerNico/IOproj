@@ -12,15 +12,12 @@ public class StringReversed {
         File file = new File(fileName);
 
         try {
-            BufferedReader in = new BufferedReader(new FileReader(file.getAbsoluteFile()));
-            try {
+            try (BufferedReader in = new BufferedReader(new FileReader(file.getAbsoluteFile()))) {
                 String s;
                 while ((s = in.readLine()) != null) {
                     sb.append(new StringBuilder(s).reverse().toString());
                     sb.append("\n");
                 }
-            } finally {
-                in.close();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -22,7 +22,7 @@ public abstract class GeneralUtilities {
         if (file.exists()) {file.delete();}
     }
 
-    public static String readAllLines(String fileName) throws FileNotFoundException {
+    public static String readAllLines(String fileName) {
         StringBuilder sb = new StringBuilder();
 
         File file = new File( fileName);
