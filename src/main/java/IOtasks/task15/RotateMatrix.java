@@ -32,18 +32,18 @@ public class RotateMatrix {
             sj.add("Initial matrix");
             sj.add(matrix.toString());
 
-            List<List<Double>> matrixTranspose = new ArrayList<>();
+            List<List<Double>> matrixRotated = new ArrayList<>();
             int n=matrix.size();
             for (int i = 0; i < n; i++) {
                 ArrayList<Double> row=new ArrayList<>();
                 for (int j = 0; j < n; j++) {
                     row.add(matrix.get(n-1-j).get(i));
                 }
-                matrixTranspose.add(row);
+                matrixRotated.add(row);
             }
 
             sj.add("Final matrix");
-            sj.add(matrixTranspose.toString());
+            sj.add(matrixRotated.toString());
 
             Path writeTo = Paths.get(fileName);
             GeneralUtilities.write(writeTo.getParent().toString() + "/matrices.txt", sj.toString());

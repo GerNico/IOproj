@@ -1,4 +1,4 @@
-package IOtasks.task12;
+package IOtasks.task16;
 
 import IOtasks.GeneralUtilities;
 
@@ -8,25 +8,20 @@ import java.util.StringJoiner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MarkUpAndFind {
-    public static void markUp(String fileName,String targetPattern) {
+public class StringFinder {
+    public static void findAndSaveToFile(String fileName,String targetString) {
         String text = GeneralUtilities.readAllLines(fileName);
         StringJoiner sj = new StringJoiner("\n");
         StringJoiner sf = new StringJoiner("\n");
         String[] strings = text.split("\n");
-        String regex = "[\\p{L}\\p{N}-]+";
+        Pattern pattern =Pattern.compile(targetString);
 
-        for (String string : strings) {
-        sj.add(string.replaceAll(regex,"-$0-"));
+        for (int i=0;i<strings.length;i++) {
+        Matcher matcher=pattern.matcher(strings[i]);
+        while (matcher.find()){sf.add("string №"+(i+1)+" contains it");}
         }
 
-        Pattern pattern =Pattern.compile(targetPattern);
-        Matcher matcher=pattern.matcher(text);
-        while (matcher.find()){sf.add(matcher.group());}
-
         Path writeTo = Paths.get(fileName);
-        GeneralUtilities.write(writeTo.getParent().toString() + "/markUp.txt", sj.toString());
         GeneralUtilities.write(writeTo.getParent().toString() + "/found.txt", sf.toString());
     }
 }
-

@@ -2,9 +2,12 @@ package IOtasks;
 
 import IOtasks.task1.CreateAndSort;
 import IOtasks.task10.ReplFirstAndLast;
+import IOtasks.task11.SelectWordsFromStrings;
 import IOtasks.task12.MarkUpAndFind;
+import IOtasks.task13.TelephonesOwners;
 import IOtasks.task14.TransponeMatrix;
 import IOtasks.task15.RotateMatrix;
+import IOtasks.task16.StringFinder;
 import IOtasks.task2.PublicToPrivate;
 import IOtasks.task3.StringReversed;
 import IOtasks.task4.LittleToBig;
@@ -48,14 +51,23 @@ public class Launcher {
 //                      Task Ten
         GeneralUtilities.clearIfExists(baseDir+"task10/replace.txt");
         ReplFirstAndLast.replaceFirstAndLast(baseDir+"task10/some.txt");
-        //                      Task Twelve
+//                              Task Eleven
+        GeneralUtilities.clearIfExists(baseDir+"task11/wordsInLines.txt");
+        SelectWordsFromStrings.selectWords(baseDir+"task11/news.txt",8,5);
+//                              Task Twelve
         GeneralUtilities.clearIfExists(baseDir+"task12/markUp.txt");
         MarkUpAndFind.markUp(baseDir+"task12/some.txt",".ight.");
+//                              Task Thirteen
+        GeneralUtilities.clearIfExists(baseDir+"task13/theDudes.txt");
+        TelephonesOwners.telephonesStartingOnTwoNumbersInPattern(baseDir+"task13/dudes.txt",7,0);
 //                              Task Fourteen
         GeneralUtilities.clearIfExists(baseDir+"task14/matrices.txt");
         TransponeMatrix.readMatrixAndTranspose(baseDir+"task14/matrix.txt");
 //                              Task Fifteen
         GeneralUtilities.clearIfExists(baseDir+"task15/matrices.txt");
         RotateMatrix.readMatrixAndRotate(baseDir+"task15/matrix.txt");
+//                                      Task Sixteen
+        GeneralUtilities.clearIfExists(baseDir+"task16/found.txt");
+        StringFinder.findAndSaveToFile(baseDir+"task16/song.txt","Aux armes, citoyens");
     }
 }
