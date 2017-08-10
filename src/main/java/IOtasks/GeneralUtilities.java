@@ -17,7 +17,7 @@ public abstract class GeneralUtilities {
         }
     }
 
-    public static void clearIfExists(String s){
+    static void clearIfExists(String s){
         File file = new File(s);
         if (file.exists()) {file.delete();}
     }

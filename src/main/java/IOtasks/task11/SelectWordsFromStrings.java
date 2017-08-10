@@ -4,9 +4,7 @@ import IOtasks.GeneralUtilities;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.StringJoiner;
 import java.util.function.Function;
 import java.util.regex.Matcher;
@@ -40,7 +38,7 @@ public class SelectWordsFromStrings {
 
         if (strings.length > mLines) {
             for (int i = strings.length - mLines; i < strings.length; i++) {
-                    sj.add(lastWords.apply(strings[i]));
+                sj.add(lastWords.apply(strings[i]));
             }
         } else {
             Arrays.stream(strings).map(lastWords).forEach(sj::add);

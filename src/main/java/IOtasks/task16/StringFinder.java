@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 public class StringFinder {
     public static void findAndSaveToFile(String fileName,String targetString) {
         String text = GeneralUtilities.readAllLines(fileName);
-        StringJoiner sj = new StringJoiner("\n");
         StringJoiner sf = new StringJoiner("\n");
         String[] strings = text.split("\n");
         Pattern pattern =Pattern.compile(targetString);
